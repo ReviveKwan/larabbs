@@ -4156,3 +4156,154 @@ into your web browser: [http://larabbs.test/password/reset/43848739ced37d4389696
 [2020-09-10 11:35:32] local.INFO: select * from `users` where `id` = '4' limit 1  
 [2020-09-10 11:35:37] local.INFO: select * from `users` where `id` = '4' limit 1  
 [2020-09-10 11:35:37] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-10 14:31:59] local.INFO: select * from `users` where `email` = 'Monkey@163.com' limit 1  
+[2020-09-10 14:31:59] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 14:31:59] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-10 14:32:07] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 14:32:16] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 14:32:16] local.INFO: update `users` set `remember_token` = '5yfwQUM1V9xedYsMaU0SmEXnHL1X4CcfU2AB9RjJZ6WA5eV8nhg12p8QQjRz' where `id` = '4'  
+[2020-09-10 14:32:24] local.INFO: select * from `users` where `email` = 'Monkey@163.com' limit 1  
+[2020-09-10 14:32:24] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 14:44:17] local.ERROR: SQLSTATE[HY000] [1045] Access denied for user 'homestead'@'localhost' (using password: YES) (SQL: select * from information_schema.tables where table_schema = larabbs and table_name = migrations and table_type = 'BASE TABLE') {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'homestead'@'localhost' (using password: YES) (SQL: select * from information_schema.tables where table_schema = larabbs and table_name = migrations and table_type = 'BASE TABLE') at /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connection.php:671)
+[stacktrace]
+#0 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connection.php(631): Illuminate\\Database\\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#1 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connection.php(339): Illuminate\\Database\\Connection->run('select * from i...', Array, Object(Closure))
+#2 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\\Database\\Connection->select('select * from i...', Array)
+#3 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(169): Illuminate\\Database\\Schema\\MySqlBuilder->hasTable('migrations')
+#4 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(608): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+#5 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(93): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+#6 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(64): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+#7 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(541): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#8 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(81): Illuminate\\Database\\Migrations\\Migrator->usingConnection(NULL, Object(Closure))
+#9 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#10 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): call_user_func_array(Array, Array)
+#11 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#12 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#13 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(39): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#14 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#15 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#16 /Users/revivekwan/Code/larabbs/vendor/symfony/console/Command/Command.php(258): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#17 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#18 /Users/revivekwan/Code/larabbs/vendor/symfony/console/Application.php(916): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 /Users/revivekwan/Code/larabbs/vendor/symfony/console/Application.php(264): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 /Users/revivekwan/Code/larabbs/vendor/symfony/console/Application.php(140): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 /Users/revivekwan/Code/larabbs/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 {main}
+
+[previous exception] [object] (PDOException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'homestead'@'localhost' (using password: YES) at /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:70)
+[stacktrace]
+#0 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(70): PDO->__construct('mysql:host=127....', 'homestead', 'secret', Array)
+#1 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(46): Illuminate\\Database\\Connectors\\Connector->createPdoConnection('mysql:host=127....', 'homestead', 'secret', Array)
+#2 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection('mysql:host=127....', Array, Array)
+#3 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(184): Illuminate\\Database\\Connectors\\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
+#5 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connection.php(926): call_user_func(Object(Closure))
+#6 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connection.php(961): Illuminate\\Database\\Connection->getPdo()
+#7 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connection.php(405): Illuminate\\Database\\Connection->getReadPdo()
+#8 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connection.php(331): Illuminate\\Database\\Connection->getPdoForSelect(true)
+#9 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connection.php(664): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('select * from i...', Array)
+#10 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connection.php(631): Illuminate\\Database\\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#11 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connection.php(339): Illuminate\\Database\\Connection->run('select * from i...', Array, Object(Closure))
+#12 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\\Database\\Connection->select('select * from i...', Array)
+#13 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(169): Illuminate\\Database\\Schema\\MySqlBuilder->hasTable('migrations')
+#14 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(608): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+#15 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(93): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+#16 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(64): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+#17 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(541): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#18 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(81): Illuminate\\Database\\Migrations\\Migrator->usingConnection(NULL, Object(Closure))
+#19 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#20 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): call_user_func_array(Array, Array)
+#21 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#22 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#23 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(39): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#24 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#25 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#26 /Users/revivekwan/Code/larabbs/vendor/symfony/console/Command/Command.php(258): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#27 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#28 /Users/revivekwan/Code/larabbs/vendor/symfony/console/Application.php(916): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /Users/revivekwan/Code/larabbs/vendor/symfony/console/Application.php(264): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /Users/revivekwan/Code/larabbs/vendor/symfony/console/Application.php(140): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#32 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#33 /Users/revivekwan/Code/larabbs/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#34 {main}
+"} 
+[2020-09-10 14:44:45] local.INFO: select * from information_schema.tables where table_schema = 'larabbs' and table_name = 'migrations' and table_type = 'BASE TABLE'  
+[2020-09-10 14:44:45] local.INFO: select `migration` from `migrations` order by `batch` asc, `migration` asc  
+[2020-09-10 14:44:45] local.INFO: select max(`batch`) as aggregate from `migrations`  
+[2020-09-10 14:44:45] local.INFO: create table `categories` (`id` bigint unsigned not null auto_increment primary key, `name` varchar(255) not null comment '分类名', `description` text null comment '描述', `post_count` int not null default '0' comment '帖子数', `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci'  
+[2020-09-10 14:44:45] local.INFO: alter table `categories` add index `categories_name_index`(`name`)  
+[2020-09-10 14:44:45] local.INFO: insert into `migrations` (`migration`, `batch`) values ('2020_09_10_144133_create_categories_table', '3')  
+[2020-09-10 14:51:17] local.ERROR: SQLSTATE[HY000] [1045] Access denied for user 'homestead'@'localhost' (using password: YES) (SQL: select * from information_schema.tables where table_schema = larabbs and table_name = migrations and table_type = 'BASE TABLE') {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'homestead'@'localhost' (using password: YES) (SQL: select * from information_schema.tables where table_schema = larabbs and table_name = migrations and table_type = 'BASE TABLE') at /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connection.php:671)
+[stacktrace]
+#0 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connection.php(631): Illuminate\\Database\\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#1 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connection.php(339): Illuminate\\Database\\Connection->run('select * from i...', Array, Object(Closure))
+#2 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\\Database\\Connection->select('select * from i...', Array)
+#3 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(169): Illuminate\\Database\\Schema\\MySqlBuilder->hasTable('migrations')
+#4 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(608): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+#5 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(93): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+#6 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(64): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+#7 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(541): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#8 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(81): Illuminate\\Database\\Migrations\\Migrator->usingConnection(NULL, Object(Closure))
+#9 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#10 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): call_user_func_array(Array, Array)
+#11 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#12 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#13 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(39): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#14 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#15 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#16 /Users/revivekwan/Code/larabbs/vendor/symfony/console/Command/Command.php(258): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#17 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#18 /Users/revivekwan/Code/larabbs/vendor/symfony/console/Application.php(916): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 /Users/revivekwan/Code/larabbs/vendor/symfony/console/Application.php(264): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 /Users/revivekwan/Code/larabbs/vendor/symfony/console/Application.php(140): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 /Users/revivekwan/Code/larabbs/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 {main}
+
+[previous exception] [object] (PDOException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'homestead'@'localhost' (using password: YES) at /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:70)
+[stacktrace]
+#0 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(70): PDO->__construct('mysql:host=127....', 'homestead', 'secret', Array)
+#1 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(46): Illuminate\\Database\\Connectors\\Connector->createPdoConnection('mysql:host=127....', 'homestead', 'secret', Array)
+#2 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection('mysql:host=127....', Array, Array)
+#3 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(184): Illuminate\\Database\\Connectors\\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
+#5 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connection.php(926): call_user_func(Object(Closure))
+#6 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connection.php(961): Illuminate\\Database\\Connection->getPdo()
+#7 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connection.php(405): Illuminate\\Database\\Connection->getReadPdo()
+#8 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connection.php(331): Illuminate\\Database\\Connection->getPdoForSelect(true)
+#9 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connection.php(664): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('select * from i...', Array)
+#10 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connection.php(631): Illuminate\\Database\\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#11 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Connection.php(339): Illuminate\\Database\\Connection->run('select * from i...', Array, Object(Closure))
+#12 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\\Database\\Connection->select('select * from i...', Array)
+#13 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(169): Illuminate\\Database\\Schema\\MySqlBuilder->hasTable('migrations')
+#14 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(608): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+#15 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(93): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+#16 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(64): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+#17 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(541): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#18 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(81): Illuminate\\Database\\Migrations\\Migrator->usingConnection(NULL, Object(Closure))
+#19 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#20 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): call_user_func_array(Array, Array)
+#21 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#22 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#23 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(39): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#24 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#25 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#26 /Users/revivekwan/Code/larabbs/vendor/symfony/console/Command/Command.php(258): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#27 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#28 /Users/revivekwan/Code/larabbs/vendor/symfony/console/Application.php(916): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /Users/revivekwan/Code/larabbs/vendor/symfony/console/Application.php(264): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /Users/revivekwan/Code/larabbs/vendor/symfony/console/Application.php(140): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#32 /Users/revivekwan/Code/larabbs/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#33 /Users/revivekwan/Code/larabbs/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#34 {main}
+"} 
+[2020-09-10 14:51:23] local.INFO: select * from information_schema.tables where table_schema = 'larabbs' and table_name = 'migrations' and table_type = 'BASE TABLE'  
+[2020-09-10 14:51:23] local.INFO: select `migration` from `migrations` order by `batch` asc, `migration` asc  
+[2020-09-10 14:51:23] local.INFO: select max(`batch`) as aggregate from `migrations`  
+[2020-09-10 14:51:23] local.INFO: insert into `categories` (`description`, `name`) values ('分享创造,分享发现', '分享'), ('开发技巧、推荐扩展包等', '教程'), ('请保持友善，互帮互助', '问答'), ('站点公告', '公告')  
+[2020-09-10 14:51:23] local.INFO: insert into `migrations` (`migration`, `batch`) values ('2020_09_10_144809_seed_categories_data', '4')  
