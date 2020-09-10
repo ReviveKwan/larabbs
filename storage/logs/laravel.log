@@ -3960,3 +3960,25 @@ into your web browser: [http://larabbs.test/password/reset/43848739ced37d4389696
 [2020-09-09 17:34:37] local.INFO: select count(*) as aggregate from `users` where `name` = 'Monkey-D-Luffy' and `id` <> '4'  
 [2020-09-09 17:34:47] local.INFO: select * from `users` where `id` = '4' limit 1  
 [2020-09-09 17:34:47] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 09:56:14] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 09:56:22] local.INFO: select * from `users` where `email` = 'Monkey@163.com' limit 1  
+[2020-09-10 09:56:23] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 09:56:29] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 09:56:29] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 09:57:26] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 09:57:26] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 09:57:26] local.INFO: select count(*) as aggregate from `users` where `name` = 'Monkey-D-Luffy' and `id` <> '4'  
+[2020-09-10 09:57:26] local.INFO: update `users` set `avatar` = '头像gif.png', `users`.`updated_at` = '2020-09-10 09:57:26' where `id` = '4'  
+[2020-09-10 09:57:27] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 09:57:27] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 09:59:55] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 09:59:55] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 10:00:24] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 10:00:24] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 10:00:24] local.INFO: select count(*) as aggregate from `users` where `name` = 'Monkey-D-Luffy' and `id` <> '4'  
+[2020-09-10 10:12:20] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 10:12:20] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 10:12:20] local.INFO: select count(*) as aggregate from `users` where `name` = 'Monkey-D-Luffy' and `id` <> '4'  
+[2020-09-10 10:12:20] local.INFO: update `users` set `avatar` = 'http://larabbs.test//uploads/images/avatars/202009/10/4_1599703940_Kdlkqj1zjI.png', `users`.`updated_at` = '2020-09-10 10:12:20' where `id` = '4'  
+[2020-09-10 10:12:21] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 10:12:21] local.INFO: select * from `users` where `id` = '4' limit 1  
