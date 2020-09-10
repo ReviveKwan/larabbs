@@ -16,7 +16,7 @@ class TopicsController extends Controller
 
 	public function index()
 	{
-		$topics = Topic::paginate();
+		$topics = Topic::query()->with('user', 'category')->paginate(30);
 		return view('topics.index', compact('topics'));
 	}
 
@@ -32,7 +32,7 @@ class TopicsController extends Controller
 
 	public function store(TopicRequest $request)
 	{
-		$topic = Topic::create($request->all());
+		$topic = Topic::query()->create($request->all());
 		return redirect()->route('topics.show', $topic->id)->with('message', 'Created successfully.');
 	}
 
