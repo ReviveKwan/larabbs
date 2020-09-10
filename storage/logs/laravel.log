@@ -4307,3 +4307,22 @@ into your web browser: [http://larabbs.test/password/reset/43848739ced37d4389696
 [2020-09-10 14:51:23] local.INFO: select max(`batch`) as aggregate from `migrations`  
 [2020-09-10 14:51:23] local.INFO: insert into `categories` (`description`, `name`) values ('分享创造,分享发现', '分享'), ('开发技巧、推荐扩展包等', '教程'), ('请保持友善，互帮互助', '问答'), ('站点公告', '公告')  
 [2020-09-10 14:51:23] local.INFO: insert into `migrations` (`migration`, `batch`) values ('2020_09_10_144809_seed_categories_data', '4')  
+[2020-09-10 15:12:46] local.INFO: select * from information_schema.tables where table_schema = 'larabbs' and table_name = 'migrations' and table_type = 'BASE TABLE'  
+[2020-09-10 15:12:46] local.INFO: select `migration` from `migrations` order by `batch` asc, `migration` asc  
+[2020-09-10 15:12:46] local.INFO: select max(`batch`) as aggregate from `migrations`  
+[2020-09-10 15:12:46] local.INFO: insert into `categories` (`description`, `name`) values ('分享创造,分享发现', '分享'), ('开发技巧、推荐扩展包等', '教程'), ('请保持友善，互帮互助', '问答'), ('站点公告', '公告')  
+[2020-09-10 15:12:46] local.INFO: insert into `migrations` (`migration`, `batch`) values ('2020_09_10_144809_seed_categories_data', '4')  
+[2020-09-10 15:12:46] local.INFO: create table `topics` (`id` int unsigned not null auto_increment primary key, `title` varchar(255) not null, `body` text not null, `user_id` bigint unsigned not null, `category_id` int unsigned not null, `reply_count` int unsigned not null default '0', `view_count` int unsigned not null default '0', `last_reply_user_id` int unsigned not null default '0', `order` int unsigned not null default '0', `excerpt` text null, `slug` varchar(255) null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci'  
+[2020-09-10 15:12:46] local.INFO: alter table `topics` add index `topics_title_index`(`title`)  
+[2020-09-10 15:12:46] local.INFO: alter table `topics` add index `topics_user_id_index`(`user_id`)  
+[2020-09-10 15:12:46] local.INFO: alter table `topics` add index `topics_category_id_index`(`category_id`)  
+[2020-09-10 15:12:46] local.INFO: insert into `migrations` (`migration`, `batch`) values ('2020_09_10_151245_create_topics_table', '4')  
+[2020-09-10 15:23:10] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 15:23:27] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 15:23:27] local.INFO: select count(*) as aggregate from `topics`  
+[2020-09-10 15:23:40] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 15:23:56] local.INFO: select * from `users` where `id` = '4' limit 1  
+[2020-09-10 15:23:56] local.INFO: update `users` set `remember_token` = 'hUE5rkAMt3l9Bb0LytukLcYGBkZJr3bd6W2G6ozfRaChi9EguPxTf9Kk32Q8' where `id` = '4'  
+[2020-09-10 15:24:26] local.INFO: select count(*) as aggregate from `topics`  
+[2020-09-10 15:24:34] local.INFO: select * from `users` where `email` = 'Monkey@163.com' limit 1  
+[2020-09-10 15:24:34] local.INFO: select * from `users` where `id` = '4' limit 1  
