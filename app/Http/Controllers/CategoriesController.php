@@ -8,9 +8,13 @@ use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
 {
-    public function show(Category $category)
+    public function show(Category $category, Request $request, Topic $topic)
     {
-        $topics = Topic::query()->where('category_id', $category->id)->with('category')->paginate(20);
+        $topics = $topic->WithOrder($request->order)
+            ->where('category_id', $category->id)
+            ->with('category', 'user')
+            ->paginate(20);
+        
         return view('topics.index', compact('topics', 'category'));
     }
 }
