@@ -8082,3 +8082,17 @@ into your web browser: [http://larabbs.test/password/reset/e63f4d6a9294e045f4d71
 [2020-09-17 18:07:05] local.INFO: select * from `users` where `id` = '1' limit 1  
 [2020-09-17 18:07:07] local.INFO: select * from `users` where `id` = '1' limit 1  
 [2020-09-17 18:07:07] local.INFO: select * from `categories`  
+[2020-09-17 19:22:43] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-17 19:22:43] local.INFO: select * from `categories`  
+[2020-09-17 19:23:56] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-17 19:23:56] local.INFO: select * from `categories`  
+[2020-09-17 19:25:07] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-17 19:25:37] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-17 19:25:40] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-17 19:25:56] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-17 19:26:36] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-17 19:26:47] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-17 19:26:47] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-17 19:26:47] local.INFO: select count(*) as aggregate from `topics` where `topics`.`user_id` = '1' and `topics`.`user_id` is not null  
+[2020-09-17 19:26:47] local.INFO: select * from `topics` where `topics`.`user_id` = '1' and `topics`.`user_id` is not null order by `created_at` desc limit 5 offset 0  
+[2020-09-17 19:26:51] local.INFO: select * from `users` where `id` = '1' limit 1  
