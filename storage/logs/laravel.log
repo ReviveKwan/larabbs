@@ -8113,3 +8113,12 @@ into your web browser: [http://larabbs.test/password/reset/e63f4d6a9294e045f4d71
 [2020-09-22 15:19:53] local.INFO: select * from `categories` where `categories`.`id` in (1, 2, 3, 4)  
 [2020-09-22 15:19:57] local.INFO: select * from `users` where `id` = '1' limit 1  
 [2020-09-22 15:19:58] local.INFO: select * from `categories`  
+[2020-09-22 15:32:17] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-22 15:32:18] local.INFO: select * from `categories`  
+[2020-09-22 15:32:30] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-22 15:32:54] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-22 15:33:07] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-22 15:33:25] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-22 15:33:25] local.INFO: insert into `topics` (`title`, `category_id`, `body`, `user_id`, `excerpt`, `updated_at`, `created_at`) values ('上传图片帖子', '2', '<p><img alt="头像gif.png" src="http://larabbs.test//uploads/images/topic/202009/22/1_1600759987_WtmQOATDTX.png" width="440" height="330">上传图片<br></p>', '1', '上传图片', '2020-09-22 15:33:25', '2020-09-22 15:33:25')  
+[2020-09-22 15:33:26] local.INFO: select * from `topics` where `id` = '105' limit 1  
+[2020-09-22 15:33:26] local.INFO: select * from `users` where `id` = '1' limit 1  
