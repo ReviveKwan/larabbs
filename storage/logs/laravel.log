@@ -8122,3 +8122,34 @@ into your web browser: [http://larabbs.test/password/reset/e63f4d6a9294e045f4d71
 [2020-09-22 15:33:25] local.INFO: insert into `topics` (`title`, `category_id`, `body`, `user_id`, `excerpt`, `updated_at`, `created_at`) values ('上传图片帖子', '2', '<p><img alt="头像gif.png" src="http://larabbs.test//uploads/images/topic/202009/22/1_1600759987_WtmQOATDTX.png" width="440" height="330">上传图片<br></p>', '1', '上传图片', '2020-09-22 15:33:25', '2020-09-22 15:33:25')  
 [2020-09-22 15:33:26] local.INFO: select * from `topics` where `id` = '105' limit 1  
 [2020-09-22 15:33:26] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-22 15:39:58] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-22 15:39:58] local.INFO: select count(*) as aggregate from `topics`  
+[2020-09-22 15:39:59] local.INFO: select * from `topics` order by `updated_at` desc limit 30 offset 0  
+[2020-09-22 15:39:59] local.INFO: select * from `users` where `users`.`id` in (1, 2, 3, 5, 6, 7, 8, 9, 10)  
+[2020-09-22 15:39:59] local.INFO: select * from `categories` where `categories`.`id` in (1, 2, 3, 4)  
+[2020-09-22 15:40:03] local.INFO: select * from `topics` where `id` = '105' limit 1  
+[2020-09-22 15:40:03] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-22 15:40:03] local.INFO: select * from `users` where `users`.`id` = '1' limit 1  
+[2020-09-22 15:40:12] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-22 15:40:12] local.INFO: select * from `categories`  
+[2020-09-22 15:41:21] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-22 15:41:21] local.INFO: select * from `categories`  
+[2020-09-22 15:43:08] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-22 15:43:08] local.INFO: select * from `categories`  
+[2020-09-22 15:43:50] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-22 15:43:50] local.INFO: insert into `topics` (`title`, `category_id`, `body`, `user_id`, `excerpt`, `updated_at`, `created_at`) values ('php 是最好的语言', '2', '<h2>说明</h2><blockquote><p style="margin-left: 0px;">文章起源：蛮多同学在犹豫选择 PHP 进行学习，这里总结了一些数据，可以作为参考。</p></blockquote><p style="margin-left: 0px;">为什么 PHP 是最好的语言？你也许会说他的语法好学、部署简单、面面俱到的函数、甚至你会以为我在调侃 PHP 而哈哈大笑。</p><p style="margin-left: 0px;">在我看来，PHP 之所以是星球上最好的语言，是因为有大量的人在使用它。</p><p style="margin-left: 0px;"></p><p><img src="https://cdn.learnku.com/uploads/images/201612/13/1/YhzupYZMmO.png" alt="file"></p><p style="margin-left: 0px;">上面这张数据图，是由&nbsp;<a href="https://w3techs.com/technologies/overview/programming_language/all">W3Techs</a>&nbsp;网站提供的&nbsp;<a href="https://w3techs.com/technologies/overview/programming_language/all">服务器端脚本语言市场占有率</a>，请配合以下信息一起理解此图：</p><ul><li>样本是&nbsp;<a href="http://www.alexa.com/" target="_blank">http://www.alexa.com/</a>&nbsp;世界排名前一千万的网站；</li><li>此数据每日更新。</li></ul><p style="margin-left: 0px;">以上列表信息选自：<a href="https://w3techs.com/technologies">Technologies Overview</a>。</p><p style="margin-left: 0px;">大部分的商业网站在使用 PHP，会导致 PHP 的人才需求非常大，学习、使用 PHP 的人群也会很庞大。</p><h2>PHP 的将来</h2><p style="margin-left: 0px;">PHP 的将来是由 PHP7 决定的，再来看下 PHP 7 的表现。</p><p style="margin-left: 0px;">发明 PHP 的 Zend 公司发布的&nbsp;<a href="http://www.zend.com/en/resources/php7_infographic">PHP 与其他语言运行效率对比</a></p><p style="margin-left: 0px;"></p><p><img src="https://cdn.learnku.com/uploads/images/201612/13/1/4EPATVwf2B.png" alt="file"></p><p style="margin-left: 0px;">下面这一个是&nbsp;<a href="https://blog.famzah.net/2016/02/09/cpp-vs-python-vs-perl-vs-php-performance-benchmark-2016/">C++ vs Python vs PHP vs Java vs NodeJS 性能大 PK</a></p><p style="margin-left: 0px;"></p><p><img src="https://cdn.learnku.com/uploads/images/201612/13/1/NOYbRvU0dm.png" alt="file"></p><p style="margin-left: 0px;">从运行结果来看，毫无疑问，PHP7 是最快的&nbsp;<span style="color: rgb(53, 56, 58);">脚本语言</span>&nbsp;（注意是脚本语言哈）。</p><blockquote><p style="margin-left: 0px;">有同学在困惑 NodeJS 不是脚本语言？ JS 也就是这里的 Nodejs 是运行在是 V8 上的，V8 引擎会对 JS 进行预编译，具体见这里&nbsp;<a href="https://hashnode.com/post/is-nodejs-compiled-or-interpreted-language-cijylh0ed00keco5318e1em8p">Is Node.js compiled or interpreted language? - Hashnode</a></p></blockquote><p style="margin-left: 0px;">看这个表的时候要注意：</p><ul><li>Total&nbsp;<code>CPU time</code>&nbsp;越低越快；</li><li><code>Slower than</code>&nbsp;列里，<code>C++</code>&nbsp;对比&nbsp;<code>C++</code>&nbsp;要慢多少&nbsp;<code>CPU time</code>，<code>previous</code>&nbsp;是在列表里对比上一个排名的语言要慢多少&nbsp;<code>CPU time</code>。</li><li><code>Java 8 (non-std lib)</code>&nbsp;与&nbsp;<code>Python 2.7 + PyPy</code>&nbsp;因为不支持通用函数库，所以只参考不列入计算。</li></ul><p style="margin-left: 0px;">简要分析结果如下：</p><ul><li>NodeJS 快 2 倍。</li><li>Java 8 接近慢 2 倍。</li><li>Python 在性能上没有什么重大变化。 每个新版本都比上个版本稍快一点，但整体 Python 比 C++ 慢 15 倍。</li><li>Perl 与 Python 有相同的趋势，并且比 C++ 慢 22 倍。</li><li>PHP 5.x 是最慢的，运行时间是 C++ 的 47 ~ 60 倍之间。</li><li>PHP 7 的成绩最为惊人。 它比 PHP 5.x 快 10 倍，比紧随其后的脚本语言 Python 快 3 倍。</li></ul><p style="margin-left: 0px;">最后总结下，学习 PHP 的兄弟们，你们走的路没错。在考虑要不要入坑的同学们，也可以做个参考，最好的语言你怎么着也得学一学吧，至少工作机会不会太少。</p><blockquote>本作品采用<a href="https://learnku.com/docs/guide/cc4.0/6589">《CC 协议》</a>，转载必须注明作者和本文链接</blockquote><p><a></a>摈弃世俗浮躁，追求技术精湛</p>', '1', '说明文章起源：蛮多同学在犹豫选择 PHP 进行学习，这里总结了一些数据，可以作为参考。为什么 PHP 是最好的语言？你也许会说他的语法好学、部署简单、面面俱到的函数、甚至你会以为我在调侃 PHP 而哈哈大笑。在我看...', '2020-09-22 15:43:50', '2020-09-22 15:43:50')  
+[2020-09-22 15:43:52] local.INFO: select * from `topics` where `id` = '106' limit 1  
+[2020-09-22 15:43:52] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-22 15:43:52] local.INFO: select * from `users` where `users`.`id` = '1' limit 1  
+[2020-09-22 15:45:56] local.INFO: select * from `topics` where `id` = '106' limit 1  
+[2020-09-22 15:45:56] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-22 15:45:56] local.INFO: select * from `users` where `users`.`id` = '1' limit 1  
+[2020-09-22 15:46:00] local.INFO: select * from `topics` where `id` = '106' limit 1  
+[2020-09-22 15:46:00] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-22 15:46:00] local.INFO: select * from `users` where `users`.`id` = '1' limit 1  
+[2020-09-22 15:46:27] local.INFO: select * from `topics` where `id` = '106' limit 1  
+[2020-09-22 15:46:27] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-22 15:46:27] local.INFO: select * from `users` where `users`.`id` = '1' limit 1  
+[2020-09-22 15:50:44] local.INFO: select * from `topics` where `id` = '106' limit 1  
+[2020-09-22 15:50:44] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-09-22 15:50:45] local.INFO: select * from `users` where `users`.`id` = '1' limit 1  
