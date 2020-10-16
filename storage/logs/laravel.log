@@ -8153,3 +8153,68 @@ into your web browser: [http://larabbs.test/password/reset/e63f4d6a9294e045f4d71
 [2020-09-22 15:50:44] local.INFO: select * from `topics` where `id` = '106' limit 1  
 [2020-09-22 15:50:44] local.INFO: select * from `users` where `id` = '1' limit 1  
 [2020-09-22 15:50:45] local.INFO: select * from `users` where `users`.`id` = '1' limit 1  
+[2020-10-16 11:19:11] local.ERROR: Command "composer" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"composer\" is not defined. at /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php:649)
+[stacktrace]
+#0 /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php(228): Symfony\\Component\\Console\\Application->find('composer')
+#1 /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php(140): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/vagrant/Code/larabbs/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2020-10-16 11:22:39] local.INFO: select * from `users` where `email` = 'Monkey@163.com' limit 1  
+[2020-10-16 11:22:49] local.INFO: select * from `users` where `email` = 'Monkey@163.com' limit 1  
+[2020-10-16 11:22:57] local.INFO: select * from `users` where `email` = '264082251@qq.com' limit 1  
+[2020-10-16 11:26:10] local.INFO: select * from `users` where `email` = '264082251@qq.com' limit 1  
+[2020-10-16 11:26:11] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-10-16 11:31:15] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-10-16 11:31:15] local.INFO: select count(*) as aggregate from `topics`  
+[2020-10-16 11:31:15] local.INFO: select * from `topics` order by `updated_at` desc limit 30 offset 0  
+[2020-10-16 11:31:15] local.INFO: select * from `users` where `users`.`id` in (1, 2, 3, 5, 6, 7, 8, 9, 10)  
+[2020-10-16 11:31:15] local.INFO: select * from `categories` where `categories`.`id` in (1, 2, 3, 4)  
+[2020-10-16 11:31:18] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-10-16 11:31:18] local.INFO: select * from `categories`  
+[2020-10-16 11:31:37] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-10-16 11:31:37] local.INFO: insert into `topics` (`title`, `category_id`, `body`, `user_id`, `excerpt`, `updated_at`, `created_at`) values ('我要发帖！！', '3', '<p>啊啊啊啊</p>', '1', '啊啊啊啊', '2020-10-16 11:31:37', '2020-10-16 11:31:37')  
+[2020-10-16 11:31:38] local.INFO: select * from `topics` where `id` = '107' limit 1  
+[2020-10-16 11:31:38] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-10-16 11:31:38] local.INFO: select * from `users` where `users`.`id` = '1' limit 1  
+[2020-10-16 11:31:44] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-10-16 11:31:44] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-10-16 11:31:45] local.INFO: select count(*) as aggregate from `topics` where `topics`.`user_id` = '1' and `topics`.`user_id` is not null  
+[2020-10-16 11:31:45] local.INFO: select * from `topics` where `topics`.`user_id` = '1' and `topics`.`user_id` is not null order by `created_at` desc limit 5 offset 0  
+[2020-10-16 11:31:49] local.INFO: select * from `topics` where `id` = '107' limit 1  
+[2020-10-16 11:31:49] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-10-16 11:31:49] local.INFO: select * from `users` where `users`.`id` = '1' limit 1  
+[2020-10-16 11:31:51] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-10-16 11:31:52] local.INFO: select count(*) as aggregate from `topics`  
+[2020-10-16 11:31:52] local.INFO: select * from `topics` order by `updated_at` desc limit 30 offset 0  
+[2020-10-16 11:31:52] local.INFO: select * from `users` where `users`.`id` in (1, 2, 3, 5, 6, 7, 8, 9, 10)  
+[2020-10-16 11:31:52] local.INFO: select * from `categories` where `categories`.`id` in (1, 2, 3, 4)  
+[2020-10-16 11:31:55] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-10-16 11:31:55] local.INFO: select count(*) as aggregate from `topics`  
+[2020-10-16 11:31:55] local.INFO: select * from `topics` order by `created_at` desc limit 30 offset 0  
+[2020-10-16 11:31:55] local.INFO: select * from `users` where `users`.`id` in (1, 2, 3, 6, 7, 8, 9, 10)  
+[2020-10-16 11:31:55] local.INFO: select * from `categories` where `categories`.`id` in (1, 2, 3, 4)  
+[2020-10-16 11:31:57] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-10-16 11:31:57] local.INFO: select count(*) as aggregate from `topics`  
+[2020-10-16 11:31:57] local.INFO: select * from `topics` order by `updated_at` desc limit 30 offset 0  
+[2020-10-16 11:31:57] local.INFO: select * from `users` where `users`.`id` in (1, 2, 3, 5, 6, 7, 8, 9, 10)  
+[2020-10-16 11:31:57] local.INFO: select * from `categories` where `categories`.`id` in (1, 2, 3, 4)  
+[2020-10-16 11:31:59] local.INFO: select * from `topics` where `id` = '107' limit 1  
+[2020-10-16 11:31:59] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-10-16 11:31:59] local.INFO: select * from `users` where `users`.`id` = '1' limit 1  
+[2020-10-16 11:32:03] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-10-16 11:32:03] local.INFO: select count(*) as aggregate from `topics`  
+[2020-10-16 11:32:03] local.INFO: select * from `topics` order by `updated_at` desc limit 30 offset 0  
+[2020-10-16 11:32:03] local.INFO: select * from `users` where `users`.`id` in (1, 2, 3, 5, 6, 7, 8, 9, 10)  
+[2020-10-16 11:32:03] local.INFO: select * from `categories` where `categories`.`id` in (1, 2, 3, 4)  
+[2020-10-16 11:44:03] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-10-16 11:44:03] local.INFO: select count(*) as aggregate from `topics`  
+[2020-10-16 11:44:03] local.INFO: select * from `topics` order by `updated_at` desc limit 30 offset 0  
+[2020-10-16 11:44:03] local.INFO: select * from `users` where `users`.`id` in (1, 2, 3, 5, 6, 7, 8, 9, 10)  
+[2020-10-16 11:44:03] local.INFO: select * from `categories` where `categories`.`id` in (1, 2, 3, 4)  
+[2020-10-16 11:44:06] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-10-16 11:44:06] local.INFO: select * from `categories`  
+[2020-10-16 11:47:33] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-10-16 11:47:33] local.INFO: select * from `categories`  
