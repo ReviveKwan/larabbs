@@ -4,6 +4,7 @@ namespace App\Observers;
 
 use App\Handlers\SlugTranslateHandler;
 use App\Models\Topic;
+use Illuminate\Support\Env;
 
 // creating, created, updating, updated, saving,
 // saved,  deleting, deleted, restoring, restored
@@ -31,7 +32,12 @@ class TopicObserver
         // 如 slug 字段无内容，即使用翻译器对 title 进行翻译
         if(!$topic->slug){
 //            $topic->slug = SlugTranslateHandler::class->translate($topic->title);
-            $topic->slug = app(SlugTranslateHandler::class)->translate($topic->title);
+            $handler = new SlugTranslateHandler(
+                $topic->title,
+                $_ENV['BAIDU_TRANSLATE_APPID'],
+                $_ENV['BAIDU_TRANSLATE_KEY']
+            );
+            $topic->slug = $handler->translate();
         }
     }
 }
