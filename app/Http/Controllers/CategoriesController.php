@@ -17,4 +17,11 @@ class CategoriesController extends Controller
 
         return view('topics.index', compact('topics', 'category'));
     }
+
+    public function create(Category $category, Request $request, Topic $topic)
+    {
+
+
+
+    }
 }
