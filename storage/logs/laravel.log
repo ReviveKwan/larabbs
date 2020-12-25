@@ -773,3 +773,526 @@
 [2020-12-22 21:47:49] local.INFO: select * from `topics` where `id` = '122' limit 1  
 [2020-12-22 21:47:49] local.INFO: select * from `users` where `id` = '1' limit 1  
 [2020-12-22 21:47:49] local.INFO: select * from `users` where `users`.`id` = '1' limit 1  
+[2020-12-25 13:46:18] local.INFO: select * from `topics` where `id` = '122' limit 1  
+[2020-12-25 13:46:18] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 13:46:18] local.INFO: select * from `users` where `users`.`id` = '1' limit 1  
+[2020-12-25 13:46:32] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 13:46:32] local.INFO: select count(*) as aggregate from `topics`  
+[2020-12-25 13:46:32] local.INFO: select * from `topics` order by `updated_at` desc limit 30 offset 0  
+[2020-12-25 13:46:32] local.INFO: select * from `users` where `users`.`id` in (1, 2, 3, 6, 8, 9, 10)  
+[2020-12-25 13:46:32] local.INFO: select * from `categories` where `categories`.`id` in (1, 2, 3, 4)  
+[2020-12-25 13:46:35] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 13:46:35] local.INFO: select * from `categories`  
+[2020-12-25 13:46:47] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 13:46:48] local.INFO: insert into `topics` (`title`, `category_id`, `body`, `user_id`, `excerpt`, `updated_at`, `created_at`) values ('队列测试1', '1', '<p>队列测试1</p>', '1', '队列测试1', '2020-12-25 13:46:48', '2020-12-25 13:46:48')  
+[2020-12-25 13:46:49] local.INFO: select * from `topics` where `id` = '123' limit 1  
+[2020-12-25 13:46:49] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 13:46:49] local.INFO: select * from `users` where `users`.`id` = '1' limit 1  
+[2020-12-25 13:46:51] local.INFO: select * from `topics` where `topics`.`id` is null limit 1  
+[2020-12-25 13:46:51] local.INFO: select * from `topics` where `topics`.`id` is null limit 1  
+[2020-12-25 13:46:51] local.INFO: insert into `failed_jobs` (`connection`, `queue`, `payload`, `exception`, `failed_at`) values ('redis', 'default', '{"uuid":"26a890ec-b181-4c8e-be33-09bd2dfdf4ec","displayName":"AppJobsTranslateSlug","job":"IlluminateQueueCallQueuedHandler@call","maxTries":null,"maxExceptions":null,"delay":null,"timeout":null,"timeoutAt":null,"data":{"commandName":"AppJobsTranslateSlug","command":"O:22:"AppJobsTranslateSlug":9:{s:8:"u0000*u0000topic";O:45:"IlluminateContractsDatabaseModelIdentifier":4:{s:5:"class";s:16:"AppModelsTopic";s:2:"id";N;s:9:"relations";a:0:{}s:10:"connection";N;}s:3:"job";N;s:10:"connection";N;s:5:"queue";N;s:15:"chainConnection";N;s:10:"chainQueue";N;s:5:"delay";N;s:10:"middleware";a:0:{}s:7:"chained";a:0:{}}"},"id":"Fb1CVmVUExEJOKmiZ2oVGncSvfYdlvhw","attempts":0}', 'IlluminateDatabaseEloquentModelNotFoundException: No query results for model [AppModelsTopic]. in /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:480
+Stack trace:
+#0 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/SerializesAndRestoresModelIdentifiers.php(102): IlluminateDatabaseEloquentBuilder->firstOrFail()
+#1 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/SerializesAndRestoresModelIdentifiers.php(57): AppJobsTranslateSlug->restoreModel(Object(IlluminateContractsDatabaseModelIdentifier))
+#2 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/SerializesModels.php(45): AppJobsTranslateSlug->getRestoredPropertyValue(Object(IlluminateContractsDatabaseModelIdentifier))
+#3 [internal function]: AppJobsTranslateSlug->__wakeup()
+#4 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedHandler.php(53): unserialize('O:22:"AppJobs...')
+#5 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Jobs/Job.php(98): IlluminateQueueCallQueuedHandler->call(Object(IlluminateQueueJobsRedisJob), Array)
+#6 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Worker.php(356): IlluminateQueueJobsJob->fire()
+#7 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Worker.php(306): IlluminateQueueWorker->process('redis', Object(IlluminateQueueJobsRedisJob), Object(IlluminateQueueWorkerOptions))
+#8 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Worker.php(265): IlluminateQueueWorker->runJob(Object(IlluminateQueueJobsRedisJob), 'redis', Object(IlluminateQueueWorkerOptions))
+#9 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php(112): IlluminateQueueWorker->runNextJob('redis', 'default', Object(IlluminateQueueWorkerOptions))
+#10 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php(96): IlluminateQueueConsoleWorkCommand->runWorker('redis', 'default')
+#11 [internal function]: IlluminateQueueConsoleWorkCommand->handle()
+#12 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): call_user_func_array(Array, Array)
+#13 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): IlluminateContainerBoundMethod::IlluminateContainer{closure}()
+#14 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): IlluminateContainerUtil::unwrapIfClosure(Object(Closure))
+#15 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(39): IlluminateContainerBoundMethod::callBoundMethod(Object(IlluminateFoundationApplication), Array, Object(Closure))
+#16 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): IlluminateContainerBoundMethod::call(Object(IlluminateFoundationApplication), Array, Array, NULL)
+#17 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): IlluminateContainerContainer->call(Array)
+#18 /home/vagrant/Code/larabbs/vendor/symfony/console/Command/Command.php(258): IlluminateConsoleCommand->execute(Object(SymfonyComponentConsoleInputArgvInput), Object(IlluminateConsoleOutputStyle))
+#19 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): SymfonyComponentConsoleCommandCommand->run(Object(SymfonyComponentConsoleInputArgvInput), Object(IlluminateConsoleOutputStyle))
+#20 /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php(916): IlluminateConsoleCommand->run(Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#21 /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php(264): SymfonyComponentConsoleApplication->doRunCommand(Object(IlluminateQueueConsoleWorkCommand), Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#22 /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php(140): SymfonyComponentConsoleApplication->doRun(Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#23 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): SymfonyComponentConsoleApplication->run(Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#24 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): IlluminateConsoleApplication->run(Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#25 /home/vagrant/Code/larabbs/artisan(37): IlluminateFoundationConsoleKernel->handle(Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#26 {main}', '2020-12-25 13:46:51')  
+[2020-12-25 14:06:19] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:06:21] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:06:21] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:06:22] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:06:24] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:06:25] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:06:26] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:06:28] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:06:32] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:06:35] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:06:38] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:06:41] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:06:44] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:06:47] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:06:50] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:06:53] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:06:56] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:06:58] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:02] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:04] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:08] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:11] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:14] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:17] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:20] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:22] local.INFO: select * from `categories` where `id` = '1' limit 1  
+[2020-12-25 14:07:22] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:22] local.INFO: select count(*) as aggregate from `topics` where `category_id` = '1'  
+[2020-12-25 14:07:22] local.INFO: select * from `topics` where `category_id` = '1' order by `updated_at` desc limit 20 offset 0  
+[2020-12-25 14:07:22] local.INFO: select * from `categories` where `categories`.`id` in (1)  
+[2020-12-25 14:07:22] local.INFO: select * from `users` where `users`.`id` in (1, 2, 3, 7, 8)  
+[2020-12-25 14:07:23] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:23] local.INFO: select count(*) as aggregate from `topics`  
+[2020-12-25 14:07:23] local.INFO: select * from `topics` order by `updated_at` desc limit 30 offset 0  
+[2020-12-25 14:07:23] local.INFO: select * from `users` where `users`.`id` in (1, 2, 3, 6, 8, 9, 10)  
+[2020-12-25 14:07:23] local.INFO: select * from `categories` where `categories`.`id` in (1, 2, 3, 4)  
+[2020-12-25 14:07:23] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:26] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:26] local.INFO: select * from `categories`  
+[2020-12-25 14:07:26] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:29] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:31] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:36] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:38] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:41] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:44] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:44] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:44] local.INFO: insert into `topics` (`title`, `category_id`, `body`, `user_id`, `excerpt`, `updated_at`, `created_at`) values ('horizon发帖监控', '1', '<p><span style="font-size:1px;">horizon发帖监控</span><br /></p>', '1', 'horizon发帖监控', '2020-12-25 14:07:44', '2020-12-25 14:07:44')  
+[2020-12-25 14:07:45] local.INFO: select * from `topics` where `id` = '124' limit 1  
+[2020-12-25 14:07:45] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:45] local.INFO: select * from `users` where `users`.`id` = '1' limit 1  
+[2020-12-25 14:07:47] local.INFO: select * from `topics` where `topics`.`id` is null limit 1  
+[2020-12-25 14:07:47] local.INFO: select * from `topics` where `topics`.`id` is null limit 1  
+[2020-12-25 14:07:47] local.INFO: insert into `failed_jobs` (`connection`, `queue`, `payload`, `exception`, `failed_at`) values ('redis', 'default', '{"uuid":"f0ec61a7-2d09-4046-9a0b-2cf9ce1f7ff5","displayName":"AppJobsTranslateSlug","job":"IlluminateQueueCallQueuedHandler@call","maxTries":null,"maxExceptions":null,"delay":null,"timeout":null,"timeoutAt":null,"data":{"commandName":"AppJobsTranslateSlug","command":"O:22:"AppJobsTranslateSlug":9:{s:8:"u0000*u0000topic";O:45:"IlluminateContractsDatabaseModelIdentifier":4:{s:5:"class";s:16:"AppModelsTopic";s:2:"id";N;s:9:"relations";a:0:{}s:10:"connection";N;}s:3:"job";N;s:10:"connection";N;s:5:"queue";N;s:15:"chainConnection";N;s:10:"chainQueue";N;s:5:"delay";N;s:10:"middleware";a:0:{}s:7:"chained";a:0:{}}"},"id":"1","attempts":0,"type":"job","tags":["AppModelsTopic:"],"pushedAt":"1608876464.7416"}', 'IlluminateDatabaseEloquentModelNotFoundException: No query results for model [AppModelsTopic]. in /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:480
+Stack trace:
+#0 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/SerializesAndRestoresModelIdentifiers.php(102): IlluminateDatabaseEloquentBuilder->firstOrFail()
+#1 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/SerializesAndRestoresModelIdentifiers.php(57): AppJobsTranslateSlug->restoreModel(Object(IlluminateContractsDatabaseModelIdentifier))
+#2 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/SerializesModels.php(45): AppJobsTranslateSlug->getRestoredPropertyValue(Object(IlluminateContractsDatabaseModelIdentifier))
+#3 [internal function]: AppJobsTranslateSlug->__wakeup()
+#4 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedHandler.php(53): unserialize('O:22:"AppJobs...')
+#5 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Jobs/Job.php(98): IlluminateQueueCallQueuedHandler->call(Object(IlluminateQueueJobsRedisJob), Array)
+#6 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Worker.php(356): IlluminateQueueJobsJob->fire()
+#7 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Worker.php(306): IlluminateQueueWorker->process('redis', Object(IlluminateQueueJobsRedisJob), Object(IlluminateQueueWorkerOptions))
+#8 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Worker.php(132): IlluminateQueueWorker->runJob(Object(IlluminateQueueJobsRedisJob), 'redis', Object(IlluminateQueueWorkerOptions))
+#9 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php(112): IlluminateQueueWorker->daemon('redis', 'default', Object(IlluminateQueueWorkerOptions))
+#10 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php(96): IlluminateQueueConsoleWorkCommand->runWorker('redis', 'default')
+#11 /home/vagrant/Code/larabbs/vendor/laravel/horizon/src/Console/WorkCommand.php(46): IlluminateQueueConsoleWorkCommand->handle()
+#12 [internal function]: LaravelHorizonConsoleWorkCommand->handle()
+#13 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): call_user_func_array(Array, Array)
+#14 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): IlluminateContainerBoundMethod::IlluminateContainer{closure}()
+#15 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): IlluminateContainerUtil::unwrapIfClosure(Object(Closure))
+#16 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(39): IlluminateContainerBoundMethod::callBoundMethod(Object(IlluminateFoundationApplication), Array, Object(Closure))
+#17 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): IlluminateContainerBoundMethod::call(Object(IlluminateFoundationApplication), Array, Array, NULL)
+#18 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): IlluminateContainerContainer->call(Array)
+#19 /home/vagrant/Code/larabbs/vendor/symfony/console/Command/Command.php(258): IlluminateConsoleCommand->execute(Object(SymfonyComponentConsoleInputArgvInput), Object(IlluminateConsoleOutputStyle))
+#20 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): SymfonyComponentConsoleCommandCommand->run(Object(SymfonyComponentConsoleInputArgvInput), Object(IlluminateConsoleOutputStyle))
+#21 /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php(916): IlluminateConsoleCommand->run(Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#22 /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php(264): SymfonyComponentConsoleApplication->doRunCommand(Object(LaravelHorizonConsoleWorkCommand), Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#23 /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php(140): SymfonyComponentConsoleApplication->doRun(Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#24 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): SymfonyComponentConsoleApplication->run(Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#25 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): IlluminateConsoleApplication->run(Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#26 /home/vagrant/Code/larabbs/artisan(37): IlluminateFoundationConsoleKernel->handle(Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#27 {main}', '2020-12-25 14:07:47')  
+[2020-12-25 14:07:48] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:49] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:52] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:55] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:07:58] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:08:00] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:08:04] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:08:07] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:08:10] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:08:13] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:08:16] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:08:19] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:08:22] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:08:25] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:08:28] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:08:31] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:08:34] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:08:37] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:08:40] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:08:43] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:08:46] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:08:50] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:08:52] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:08:55] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:08:59] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:09:01] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:09:04] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:09:07] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:09:10] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:09:13] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:09:16] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:09:19] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:09:22] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at /home/vagrant/Code/larabbs/app/Observers/TopicObserver.php:44)
+[stacktrace]
+#0 /home/vagrant/Code/larabbs/vendor/composer/ClassLoader.php(322): Composer\\Autoload\\includeFile('/home/vagrant/C...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Observers\\\\T...')
+#2 [internal function]: spl_autoload_call('App\\\\Observers\\\\T...')
+#3 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasEvents.php(83): class_exists('App\\\\Observers\\\\T...')
+#4 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasEvents.php(57): Illuminate\\Database\\Eloquent\\Model->resolveObserverClassName('App\\\\Observers\\\\T...')
+#5 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasEvents.php(43): Illuminate\\Database\\Eloquent\\Model->registerObserver('App\\\\Observers\\\\T...')
+#6 /home/vagrant/Code/larabbs/app/Providers/AppServiceProvider.php(38): Illuminate\\Database\\Eloquent\\Model::observe('App\\\\Observers\\\\T...')
+#7 [internal function]: App\\Providers\\AppServiceProvider->boot()
+#8 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): call_user_func_array(Array, Array)
+#9 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#10 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#11 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(39): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#12 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#13 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(867): Illuminate\\Container\\Container->call(Array)
+#14 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(850): Illuminate\\Foundation\\Application->bootProvider(Object(App\\Providers\\AppServiceProvider))
+#15 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(App\\Providers\\AppServiceProvider), 27)
+#16 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): array_walk(Array, Object(Closure))
+#17 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#18 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(230): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#19 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#20 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(135): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#21 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(109): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#22 /home/vagrant/Code/larabbs/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#23 {main}
+"} 
+[2020-12-25 14:09:25] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:09:28] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:09:31] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:09:34] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:09:37] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:09:40] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:09:43] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:09:46] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:09:49] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:09:52] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:09:55] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:09:58] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:01] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:04] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:07] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:10] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:13] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:13] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:13] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:14] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:20] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:20] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:20] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:27] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:27] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:28] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:35] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:35] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:36] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:44] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:44] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:46] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:50] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:50] local.INFO: insert into `topics` (`title`, `category_id`, `body`, `user_id`, `excerpt`, `updated_at`, `created_at`) values ('horizon发帖监控222', '1', '<p><span style="font-size:1px;">horizon发帖监控222</span><br /></p>', '1', 'horizon发帖监控222', '2020-12-25 14:10:50', '2020-12-25 14:10:50')  
+[2020-12-25 14:10:51] local.INFO: select * from `topics` where `topics`.`id` = '125' limit 1  
+[2020-12-25 14:10:51] local.INFO: select * from `topics` where `id` = '125' limit 1  
+[2020-12-25 14:10:51] local.INFO: select * from `topics` where `topics`.`id` = '125' limit 1  
+[2020-12-25 14:10:51] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:51] local.INFO: insert into `failed_jobs` (`connection`, `queue`, `payload`, `exception`, `failed_at`) values ('redis', 'default', '{"uuid":"8c53d561-cb95-4372-bb59-2a97cb8c6331","displayName":"AppJobsTranslateSlug","job":"IlluminateQueueCallQueuedHandler@call","maxTries":null,"maxExceptions":null,"delay":null,"timeout":null,"timeoutAt":null,"data":{"commandName":"AppJobsTranslateSlug","command":"O:22:"AppJobsTranslateSlug":9:{s:8:"u0000*u0000topic";O:45:"IlluminateContractsDatabaseModelIdentifier":4:{s:5:"class";s:16:"AppModelsTopic";s:2:"id";i:125;s:9:"relations";a:0:{}s:10:"connection";s:5:"mysql";}s:3:"job";N;s:10:"connection";N;s:5:"queue";N;s:15:"chainConnection";N;s:10:"chainQueue";N;s:5:"delay";N;s:10:"middleware";a:0:{}s:7:"chained";a:0:{}}"},"id":"2","attempts":0,"type":"job","tags":["AppModelsTopic:125"],"pushedAt":"1608876650.8344"}', 'ErrorException: Undefined index: BAIDU_TRANSLATE_APPID in /home/vagrant/Code/larabbs/app/Jobs/TranslateSlug.php:41
+Stack trace:
+#0 /home/vagrant/Code/larabbs/app/Jobs/TranslateSlug.php(41): IlluminateFoundationBootstrapHandleExceptions->handleError(8, 'Undefined index...', '/home/vagrant/C...', 41, Array)
+#1 [internal function]: AppJobsTranslateSlug->handle()
+#2 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): call_user_func_array(Array, Array)
+#3 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): IlluminateContainerBoundMethod::IlluminateContainer{closure}()
+#4 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): IlluminateContainerUtil::unwrapIfClosure(Object(Closure))
+#5 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(39): IlluminateContainerBoundMethod::callBoundMethod(Object(IlluminateFoundationApplication), Array, Object(Closure))
+#6 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): IlluminateContainerBoundMethod::call(Object(IlluminateFoundationApplication), Array, Array, NULL)
+#7 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Bus/Dispatcher.php(94): IlluminateContainerContainer->call(Array)
+#8 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): IlluminateBusDispatcher->IlluminateBus{closure}(Object(AppJobsTranslateSlug))
+#9 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): IlluminatePipelinePipeline->IlluminatePipeline{closure}(Object(AppJobsTranslateSlug))
+#10 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Bus/Dispatcher.php(98): IlluminatePipelinePipeline->then(Object(Closure))
+#11 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedHandler.php(83): IlluminateBusDispatcher->dispatchNow(Object(AppJobsTranslateSlug), false)
+#12 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): IlluminateQueueCallQueuedHandler->IlluminateQueue{closure}(Object(AppJobsTranslateSlug))
+#13 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): IlluminatePipelinePipeline->IlluminatePipeline{closure}(Object(AppJobsTranslateSlug))
+#14 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedHandler.php(85): IlluminatePipelinePipeline->then(Object(Closure))
+#15 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedHandler.php(59): IlluminateQueueCallQueuedHandler->dispatchThroughMiddleware(Object(IlluminateQueueJobsRedisJob), Object(AppJobsTranslateSlug))
+#16 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Jobs/Job.php(98): IlluminateQueueCallQueuedHandler->call(Object(IlluminateQueueJobsRedisJob), Array)
+#17 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Worker.php(356): IlluminateQueueJobsJob->fire()
+#18 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Worker.php(306): IlluminateQueueWorker->process('redis', Object(IlluminateQueueJobsRedisJob), Object(IlluminateQueueWorkerOptions))
+#19 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Worker.php(132): IlluminateQueueWorker->runJob(Object(IlluminateQueueJobsRedisJob), 'redis', Object(IlluminateQueueWorkerOptions))
+#20 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php(112): IlluminateQueueWorker->daemon('redis', 'default', Object(IlluminateQueueWorkerOptions))
+#21 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php(96): IlluminateQueueConsoleWorkCommand->runWorker('redis', 'default')
+#22 /home/vagrant/Code/larabbs/vendor/laravel/horizon/src/Console/WorkCommand.php(46): IlluminateQueueConsoleWorkCommand->handle()
+#23 [internal function]: LaravelHorizonConsoleWorkCommand->handle()
+#24 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): call_user_func_array(Array, Array)
+#25 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): IlluminateContainerBoundMethod::IlluminateContainer{closure}()
+#26 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): IlluminateContainerUtil::unwrapIfClosure(Object(Closure))
+#27 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(39): IlluminateContainerBoundMethod::callBoundMethod(Object(IlluminateFoundationApplication), Array, Object(Closure))
+#28 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): IlluminateContainerBoundMethod::call(Object(IlluminateFoundationApplication), Array, Array, NULL)
+#29 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): IlluminateContainerContainer->call(Array)
+#30 /home/vagrant/Code/larabbs/vendor/symfony/console/Command/Command.php(258): IlluminateConsoleCommand->execute(Object(SymfonyComponentConsoleInputArgvInput), Object(IlluminateConsoleOutputStyle))
+#31 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): SymfonyComponentConsoleCommandCommand->run(Object(SymfonyComponentConsoleInputArgvInput), Object(IlluminateConsoleOutputStyle))
+#32 /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php(916): IlluminateConsoleCommand->run(Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#33 /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php(264): SymfonyComponentConsoleApplication->doRunCommand(Object(LaravelHorizonConsoleWorkCommand), Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#34 /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php(140): SymfonyComponentConsoleApplication->doRun(Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#35 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): SymfonyComponentConsoleApplication->run(Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#36 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): IlluminateConsoleApplication->run(Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#37 /home/vagrant/Code/larabbs/artisan(37): IlluminateFoundationConsoleKernel->handle(Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#38 {main}', '2020-12-25 14:10:51')  
+[2020-12-25 14:10:51] local.INFO: select * from `users` where `users`.`id` = '1' limit 1  
+[2020-12-25 14:10:51] local.ERROR: Undefined index: BAIDU_TRANSLATE_APPID {"exception":"[object] (ErrorException(code: 0): Undefined index: BAIDU_TRANSLATE_APPID at /home/vagrant/Code/larabbs/app/Jobs/TranslateSlug.php:41)
+[stacktrace]
+#0 /home/vagrant/Code/larabbs/app/Jobs/TranslateSlug.php(41): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', '/home/vagrant/C...', 41, Array)
+#1 [internal function]: App\\Jobs\\TranslateSlug->handle()
+#2 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): call_user_func_array(Array, Array)
+#3 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#5 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(39): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#6 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#7 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Bus/Dispatcher.php(94): Illuminate\\Container\\Container->call(Array)
+#8 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Bus\\Dispatcher->Illuminate\\Bus\\{closure}(Object(App\\Jobs\\TranslateSlug))
+#9 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(App\\Jobs\\TranslateSlug))
+#10 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Bus/Dispatcher.php(98): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#11 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedHandler.php(83): Illuminate\\Bus\\Dispatcher->dispatchNow(Object(App\\Jobs\\TranslateSlug), false)
+#12 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Queue\\CallQueuedHandler->Illuminate\\Queue\\{closure}(Object(App\\Jobs\\TranslateSlug))
+#13 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(App\\Jobs\\TranslateSlug))
+#14 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedHandler.php(85): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#15 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedHandler.php(59): Illuminate\\Queue\\CallQueuedHandler->dispatchThroughMiddleware(Object(Illuminate\\Queue\\Jobs\\RedisJob), Object(App\\Jobs\\TranslateSlug))
+#16 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Jobs/Job.php(98): Illuminate\\Queue\\CallQueuedHandler->call(Object(Illuminate\\Queue\\Jobs\\RedisJob), Array)
+#17 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Worker.php(356): Illuminate\\Queue\\Jobs\\Job->fire()
+#18 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Worker.php(306): Illuminate\\Queue\\Worker->process('redis', Object(Illuminate\\Queue\\Jobs\\RedisJob), Object(Illuminate\\Queue\\WorkerOptions))
+#19 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Worker.php(132): Illuminate\\Queue\\Worker->runJob(Object(Illuminate\\Queue\\Jobs\\RedisJob), 'redis', Object(Illuminate\\Queue\\WorkerOptions))
+#20 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php(112): Illuminate\\Queue\\Worker->daemon('redis', 'default', Object(Illuminate\\Queue\\WorkerOptions))
+#21 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php(96): Illuminate\\Queue\\Console\\WorkCommand->runWorker('redis', 'default')
+#22 /home/vagrant/Code/larabbs/vendor/laravel/horizon/src/Console/WorkCommand.php(46): Illuminate\\Queue\\Console\\WorkCommand->handle()
+#23 [internal function]: Laravel\\Horizon\\Console\\WorkCommand->handle()
+#24 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): call_user_func_array(Array, Array)
+#25 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#26 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#27 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(39): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#28 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#29 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#30 /home/vagrant/Code/larabbs/vendor/symfony/console/Command/Command.php(258): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#31 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#32 /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php(916): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#33 /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php(264): Symfony\\Component\\Console\\Application->doRunCommand(Object(Laravel\\Horizon\\Console\\WorkCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#34 /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php(140): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#35 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#36 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#37 /home/vagrant/Code/larabbs/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#38 {main}
+"} 
+[2020-12-25 14:10:53] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:53] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:53] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:55] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:58] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:10:58] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:11:01] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:11:04] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:11:07] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:11:10] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:11:13] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:11:16] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:11:19] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:11:22] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:11:25] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:11:28] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:11:31] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:11:34] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:11:37] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:11:40] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:11:43] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:11:46] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:11:49] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:11:52] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:11:55] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:11:59] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:12:02] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:12:05] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:12:08] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:12:11] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:12:14] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:12:16] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:12:19] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:12:22] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:12:25] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:12:28] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:12:31] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:12:34] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:12:37] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:12:40] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:12:43] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:12:46] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:12:49] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:12:52] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:12:55] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:12:58] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:13:01] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:13:04] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:13:07] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:13:10] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:13:13] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:13:16] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:13:19] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:13:22] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:13:25] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:13:28] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:13:31] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:13:34] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:13:37] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:13:40] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:13:43] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:13:46] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:13:49] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:13:52] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:13:55] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:13:58] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:01] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:04] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:07] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:10] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:13] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:16] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:20] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:23] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:26] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:27] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:27] local.INFO: insert into `topics` (`title`, `category_id`, `body`, `user_id`, `excerpt`, `updated_at`, `created_at`) values ('horizon发帖监控333', '1', '<p><span style="font-size:1px;">horizon发帖监控333</span><br /></p>', '1', 'horizon发帖监控333', '2020-12-25 14:14:27', '2020-12-25 14:14:27')  
+[2020-12-25 14:14:27] local.INFO: select * from `topics` where `topics`.`id` = '126' limit 1  
+[2020-12-25 14:14:28] local.INFO: select * from `topics` where `id` = '126' limit 1  
+[2020-12-25 14:14:28] local.INFO: select * from `topics` where `topics`.`id` = '126' limit 1  
+[2020-12-25 14:14:28] local.INFO: insert into `failed_jobs` (`connection`, `queue`, `payload`, `exception`, `failed_at`) values ('redis', 'default', '{"uuid":"7ec32583-607c-480e-9c8c-a678ef328a5c","displayName":"AppJobsTranslateSlug","job":"IlluminateQueueCallQueuedHandler@call","maxTries":null,"maxExceptions":null,"delay":null,"timeout":null,"timeoutAt":null,"data":{"commandName":"AppJobsTranslateSlug","command":"O:22:"AppJobsTranslateSlug":9:{s:8:"u0000*u0000topic";O:45:"IlluminateContractsDatabaseModelIdentifier":4:{s:5:"class";s:16:"AppModelsTopic";s:2:"id";i:126;s:9:"relations";a:0:{}s:10:"connection";s:5:"mysql";}s:3:"job";N;s:10:"connection";N;s:5:"queue";N;s:15:"chainConnection";N;s:10:"chainQueue";N;s:5:"delay";N;s:10:"middleware";a:0:{}s:7:"chained";a:0:{}}"},"id":"3","attempts":0,"type":"job","tags":["AppModelsTopic:126"],"pushedAt":"1608876867.3646"}', 'ErrorException: Undefined index: BAIDU_TRANSLATE_APPID in /home/vagrant/Code/larabbs/app/Handlers/SlugTranslateHandler.php:19
+Stack trace:
+#0 /home/vagrant/Code/larabbs/app/Handlers/SlugTranslateHandler.php(19): IlluminateFoundationBootstrapHandleExceptions->handleError(8, 'Undefined index...', '/home/vagrant/C...', 19, Array)
+#1 /home/vagrant/Code/larabbs/app/Jobs/TranslateSlug.php(39): AppHandlersSlugTranslateHandler->__construct('horizonxE5x8Fx91xE5xB8x96xE7x9B...')
+#2 [internal function]: AppJobsTranslateSlug->handle()
+#3 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): call_user_func_array(Array, Array)
+#4 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): IlluminateContainerBoundMethod::IlluminateContainer{closure}()
+#5 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): IlluminateContainerUtil::unwrapIfClosure(Object(Closure))
+#6 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(39): IlluminateContainerBoundMethod::callBoundMethod(Object(IlluminateFoundationApplication), Array, Object(Closure))
+#7 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): IlluminateContainerBoundMethod::call(Object(IlluminateFoundationApplication), Array, Array, NULL)
+#8 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Bus/Dispatcher.php(94): IlluminateContainerContainer->call(Array)
+#9 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): IlluminateBusDispatcher->IlluminateBus{closure}(Object(AppJobsTranslateSlug))
+#10 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): IlluminatePipelinePipeline->IlluminatePipeline{closure}(Object(AppJobsTranslateSlug))
+#11 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Bus/Dispatcher.php(98): IlluminatePipelinePipeline->then(Object(Closure))
+#12 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedHandler.php(83): IlluminateBusDispatcher->dispatchNow(Object(AppJobsTranslateSlug), false)
+#13 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): IlluminateQueueCallQueuedHandler->IlluminateQueue{closure}(Object(AppJobsTranslateSlug))
+#14 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): IlluminatePipelinePipeline->IlluminatePipeline{closure}(Object(AppJobsTranslateSlug))
+#15 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedHandler.php(85): IlluminatePipelinePipeline->then(Object(Closure))
+#16 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedHandler.php(59): IlluminateQueueCallQueuedHandler->dispatchThroughMiddleware(Object(IlluminateQueueJobsRedisJob), Object(AppJobsTranslateSlug))
+#17 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Jobs/Job.php(98): IlluminateQueueCallQueuedHandler->call(Object(IlluminateQueueJobsRedisJob), Array)
+#18 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Worker.php(356): IlluminateQueueJobsJob->fire()
+#19 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Worker.php(306): IlluminateQueueWorker->process('redis', Object(IlluminateQueueJobsRedisJob), Object(IlluminateQueueWorkerOptions))
+#20 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Worker.php(132): IlluminateQueueWorker->runJob(Object(IlluminateQueueJobsRedisJob), 'redis', Object(IlluminateQueueWorkerOptions))
+#21 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php(112): IlluminateQueueWorker->daemon('redis', 'default', Object(IlluminateQueueWorkerOptions))
+#22 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php(96): IlluminateQueueConsoleWorkCommand->runWorker('redis', 'default')
+#23 /home/vagrant/Code/larabbs/vendor/laravel/horizon/src/Console/WorkCommand.php(46): IlluminateQueueConsoleWorkCommand->handle()
+#24 [internal function]: LaravelHorizonConsoleWorkCommand->handle()
+#25 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): call_user_func_array(Array, Array)
+#26 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): IlluminateContainerBoundMethod::IlluminateContainer{closure}()
+#27 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): IlluminateContainerUtil::unwrapIfClosure(Object(Closure))
+#28 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(39): IlluminateContainerBoundMethod::callBoundMethod(Object(IlluminateFoundationApplication), Array, Object(Closure))
+#29 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): IlluminateContainerBoundMethod::call(Object(IlluminateFoundationApplication), Array, Array, NULL)
+#30 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): IlluminateContainerContainer->call(Array)
+#31 /home/vagrant/Code/larabbs/vendor/symfony/console/Command/Command.php(258): IlluminateConsoleCommand->execute(Object(SymfonyComponentConsoleInputArgvInput), Object(IlluminateConsoleOutputStyle))
+#32 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): SymfonyComponentConsoleCommandCommand->run(Object(SymfonyComponentConsoleInputArgvInput), Object(IlluminateConsoleOutputStyle))
+#33 /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php(916): IlluminateConsoleCommand->run(Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#34 /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php(264): SymfonyComponentConsoleApplication->doRunCommand(Object(LaravelHorizonConsoleWorkCommand), Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#35 /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php(140): SymfonyComponentConsoleApplication->doRun(Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#36 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): SymfonyComponentConsoleApplication->run(Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#37 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): IlluminateConsoleApplication->run(Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#38 /home/vagrant/Code/larabbs/artisan(37): IlluminateFoundationConsoleKernel->handle(Object(SymfonyComponentConsoleInputArgvInput), Object(SymfonyComponentConsoleOutputConsoleOutput))
+#39 {main}', '2020-12-25 14:14:28')  
+[2020-12-25 14:14:28] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:28] local.ERROR: Undefined index: BAIDU_TRANSLATE_APPID {"exception":"[object] (ErrorException(code: 0): Undefined index: BAIDU_TRANSLATE_APPID at /home/vagrant/Code/larabbs/app/Handlers/SlugTranslateHandler.php:19)
+[stacktrace]
+#0 /home/vagrant/Code/larabbs/app/Handlers/SlugTranslateHandler.php(19): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', '/home/vagrant/C...', 19, Array)
+#1 /home/vagrant/Code/larabbs/app/Jobs/TranslateSlug.php(39): App\\Handlers\\SlugTranslateHandler->__construct('horizon\\xE5\\x8F\\x91\\xE5\\xB8\\x96\\xE7\\x9B...')
+#2 [internal function]: App\\Jobs\\TranslateSlug->handle()
+#3 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): call_user_func_array(Array, Array)
+#4 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#5 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#6 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(39): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#7 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#8 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Bus/Dispatcher.php(94): Illuminate\\Container\\Container->call(Array)
+#9 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Bus\\Dispatcher->Illuminate\\Bus\\{closure}(Object(App\\Jobs\\TranslateSlug))
+#10 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(App\\Jobs\\TranslateSlug))
+#11 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Bus/Dispatcher.php(98): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#12 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedHandler.php(83): Illuminate\\Bus\\Dispatcher->dispatchNow(Object(App\\Jobs\\TranslateSlug), false)
+#13 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Queue\\CallQueuedHandler->Illuminate\\Queue\\{closure}(Object(App\\Jobs\\TranslateSlug))
+#14 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(App\\Jobs\\TranslateSlug))
+#15 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedHandler.php(85): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#16 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedHandler.php(59): Illuminate\\Queue\\CallQueuedHandler->dispatchThroughMiddleware(Object(Illuminate\\Queue\\Jobs\\RedisJob), Object(App\\Jobs\\TranslateSlug))
+#17 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Jobs/Job.php(98): Illuminate\\Queue\\CallQueuedHandler->call(Object(Illuminate\\Queue\\Jobs\\RedisJob), Array)
+#18 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Worker.php(356): Illuminate\\Queue\\Jobs\\Job->fire()
+#19 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Worker.php(306): Illuminate\\Queue\\Worker->process('redis', Object(Illuminate\\Queue\\Jobs\\RedisJob), Object(Illuminate\\Queue\\WorkerOptions))
+#20 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Worker.php(132): Illuminate\\Queue\\Worker->runJob(Object(Illuminate\\Queue\\Jobs\\RedisJob), 'redis', Object(Illuminate\\Queue\\WorkerOptions))
+#21 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php(112): Illuminate\\Queue\\Worker->daemon('redis', 'default', Object(Illuminate\\Queue\\WorkerOptions))
+#22 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php(96): Illuminate\\Queue\\Console\\WorkCommand->runWorker('redis', 'default')
+#23 /home/vagrant/Code/larabbs/vendor/laravel/horizon/src/Console/WorkCommand.php(46): Illuminate\\Queue\\Console\\WorkCommand->handle()
+#24 [internal function]: Laravel\\Horizon\\Console\\WorkCommand->handle()
+#25 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): call_user_func_array(Array, Array)
+#26 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#27 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#28 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(39): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#29 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#30 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#31 /home/vagrant/Code/larabbs/vendor/symfony/console/Command/Command.php(258): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#32 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#33 /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php(916): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#34 /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php(264): Symfony\\Component\\Console\\Application->doRunCommand(Object(Laravel\\Horizon\\Console\\WorkCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#35 /home/vagrant/Code/larabbs/vendor/symfony/console/Application.php(140): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#36 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#37 /home/vagrant/Code/larabbs/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#38 /home/vagrant/Code/larabbs/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#39 {main}
+"} 
+[2020-12-25 14:14:28] local.INFO: select * from `users` where `users`.`id` = '1' limit 1  
+[2020-12-25 14:14:29] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:32] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:35] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:38] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:41] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:44] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:47] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:50] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:53] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:56] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:14:59] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:15:02] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:15:05] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:15:08] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:15:11] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:15:14] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:15:17] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:15:20] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:15:23] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:15:26] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:15:29] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:15:32] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:15:35] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:15:38] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:15:41] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:15:44] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:15:47] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:15:50] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:15:53] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:15:56] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:15:59] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:16:02] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:16:05] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:16:05] local.INFO: insert into `topics` (`title`, `category_id`, `body`, `user_id`, `excerpt`, `updated_at`, `created_at`) values ('horizon发帖监控444', '1', '<p><span style="font-size:1px;">horizon发帖监控444</span><br /></p>', '1', 'horizon发帖监控444', '2020-12-25 14:16:05', '2020-12-25 14:16:05')  
+[2020-12-25 14:16:05] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:16:06] local.INFO: select * from `topics` where `id` = '127' limit 1  
+[2020-12-25 14:16:06] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:16:06] local.INFO: select * from `users` where `users`.`id` = '1' limit 1  
+[2020-12-25 14:16:07] local.INFO: select * from `topics` where `topics`.`id` = '127' limit 1  
+[2020-12-25 14:16:08] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:16:09] local.INFO: update `topics` set `slug` = 'horizon-fa-tie-jian-kong-444' where `id` = '127'  
+[2020-12-25 14:16:11] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:16:14] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:16:16] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:16:17] local.INFO: select * from `users` where `id` = '1' limit 1  
+[2020-12-25 14:16:19] local.INFO: select * from `users` where `id` = '1' limit 1  

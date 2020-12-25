@@ -13,12 +13,11 @@ class SlugTranslateHandler
     private $key;
     private $text;
 
-    public function __construct($text, $appid, $key)
+    public function __construct($text)
     {
-
         $this->text = $text;
-        $this->appid = $appid;
-        $this->key = $key;
+        $this->appid = env('BAIDU_TRANSLATE_APPID');
+        $this->key = env('BAIDU_TRANSLATE_KEY');
     }
 
     public function translate()
